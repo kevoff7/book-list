@@ -1,4 +1,5 @@
-export const getPagesMinMaxByGenre = books => {
+import { DataBooks } from '../../type.d';
+export const getPagesMinMaxByGenre = (books: DataBooks[]) => {
   let maxPage = 0;
   let minPage = 0;
   for (const key in books) {

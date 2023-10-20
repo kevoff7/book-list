@@ -5,18 +5,18 @@ import { FilteredByPage } from './FilteredByPage';
 export const HeaderBooks = () => {
   const { stateFilter } = useBookList();
   return (
-    <header className=''>
-      <h1 className='text-5xl font-semibold tracking-wide mb-5'>
+    <header className="flex flex-wrap">
+      <h1 className="mb-5 text-5xl font-semibold tracking-wide">
         {stateFilter.length} Libros disponibles
       </h1>
 
-      <div className='flex gap-20 font-mono text-lg'>
-        <div className='flex flex-col'>
-          <p className=''>Filtrar por páginas</p>
+      <div className="flex flex-wrap items-center w-full gap-4 font-mono text-lg sm:justify-between">
+        <div className="flex flex-col">
+          <p className="">Filtrar por páginas</p>
           <FilteredByPage />
         </div>
-        <div className='flex flex-col'>
-          <p className=''>Filtrar por genero</p>
+        <div className="flex flex-col">
+          <p className="">Filtrar por genero</p>
           <FilteredByGender />
         </div>
       </div>

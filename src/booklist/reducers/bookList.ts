@@ -1,22 +1,23 @@
+import { State, Action } from '../../type.d';
 import { library } from '../data/books.json';
 import { getAllGenreBooks } from '../helpers/getAllGenreBooks';
 import { getPagesMinMaxByGenre } from '../helpers/getPagesMinMaxByGenre';
 
-const allGenres = getAllGenreBooks(library);
+const allGenres = getAllGenreBooks();
 const { maxPage, minPage } = getPagesMinMaxByGenre(library);
 
-export const initialState = {
+export const initialState: State = {
   stateInit: library,
   filter: {
     genre: 'Todas',
     pages: 200,
     maxPage,
-    minPage,
+    minPage
   },
-  allGenres,
+  allGenres
 };
 
-export const reducer = (state, action) => {
+export const reducer = (state: State, action: Action) => {
   const { type: actionType, payload: actionPayload } = action;
 
   switch (actionType) {
@@ -25,15 +26,15 @@ export const reducer = (state, action) => {
       newFilter.genre = actionPayload;
       return {
         ...state,
-        filter: newFilter,
+        filter: newFilter
       };
     }
     case 'FILTER_BY_PAGES': {
       const newFilter = structuredClone(state.filter);
-      newFilter.pages = actionPayload;
+      newFilter.pages = Number(actionPayload);
       return {
         ...state,
-        filter: newFilter,
+        filter: newFilter
       };
     }
     default:

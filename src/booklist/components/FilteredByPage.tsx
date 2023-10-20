@@ -8,20 +8,20 @@ export const FilteredByPage = () => {
     <>
       <label
         htmlFor={pagesFilterId}
-        className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+        className="block text-sm font-medium text-gray-900 dark:text-white"
       />
-      <div className='flex items-center gap-3'>
+      <div className="flex items-center gap-3">
         <p>min:{filter.minPage}</p>
         <input
           id={pagesFilterId}
-          type='range'
+          type="range"
           min={filter.minPage}
           max={filter.maxPage}
           value={filter.pages}
-          onChange={event => filterByPages(event)}
-          className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700'
+          onChange={(event) => filterByPages(event)}
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
         />
-        <p>Pages:{filter.pages}</p>
+        <p>Paginas:{filter.pages}</p>
       </div>
     </>
   );

@@ -6,16 +6,18 @@ export const FilteredByGender = () => {
   const genreFilterId = useId();
   return (
     <>
-      <label htmlFor={genreFilterId}>Catergoria</label>
+      <label htmlFor={genreFilterId}>Categoria</label>
       <select
         id={genreFilterId}
         value={filter.genre}
-        onChange={event => filterByGenre(event)}
-        className='bg-slate-800'
+        onChange={(event) => filterByGenre(event)}
+        className="w-full bg-slate-800"
       >
-        <option value='Todas'>Todas</option>
-        {allGenres.map(genre => (
-          <option key={genre} value={genre}>
+        <option className="w-11" value="Todas">
+          Todas
+        </option>
+        {allGenres.map((genre) => (
+          <option className="w-10" key={genre} value={genre}>
             {genre}
           </option>
         ))}
