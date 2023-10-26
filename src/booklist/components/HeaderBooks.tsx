@@ -10,16 +10,16 @@ export const HeaderBooks = () => {
         {stateFilter.length} Libros disponibles
       </h1>
 
-      <div className="flex flex-wrap items-center w-full gap-4 font-mono text-lg sm:justify-between">
-        <div className="flex flex-col">
-          <p className="">Filtrar por páginas</p>
+      <section className="flex flex-wrap items-center w-full gap-4 font-mono text-lg sm:justify-between">
+        <article className="flex flex-col">
+          <p>Filtrar por páginas</p>
           <FilteredByPage />
-        </div>
-        <div className="flex flex-col">
-          <p className="">Filtrar por genero</p>
+        </article>
+        <article className="flex flex-col">
+          <p>Filtrar por genero</p>
           <FilteredByGender />
-        </div>
-      </div>
+        </article>
+      </section>
     </header>
   );
 };

@@ -21,7 +21,7 @@ export const FilteredByPage = () => {
           onChange={(event) => filterByPages(event)}
           className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
         />
-        <p>Paginas:{filter.pages}</p>
+        <p data-testid="pages">Paginas:{filter.pages}</p>
       </div>
     </>
   );
