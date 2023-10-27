@@ -1,4 +1,4 @@
-import { State, Action } from '../../type.d';
+import { State, Action, Types } from '../../type.d';
 import { library } from '../data/books.json';
 import { getAllGenreBooks } from '../helpers/getAllGenreBooks';
 import { getPagesMinMaxByGenre } from '../helpers/getPagesMinMaxByGenre';
@@ -21,7 +21,7 @@ export const reducer = (state: State, action: Action) => {
   const { type: actionType, payload: actionPayload } = action;
 
   switch (actionType) {
-    case 'FILTER_BY_GENRE': {
+    case Types.FILTER_BY_GENRE: {
       const newFilter = structuredClone(state.filter);
       newFilter.genre = actionPayload;
       return {
@@ -29,7 +29,7 @@ export const reducer = (state: State, action: Action) => {
         filter: newFilter
       };
     }
-    case 'FILTER_BY_PAGES': {
+    case Types.FILTER_BY_PAGES: {
       const newFilter = structuredClone(state.filter);
       newFilter.pages = Number(actionPayload);
       return {

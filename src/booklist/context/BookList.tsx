@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react';
 import { initialState, reducer } from '../reducers/bookList';
-import type { typeStateFilter, DataBooks, ContextProps } from '../../type.d';
+import { typeStateFilter, DataBooks, ContextProps, Types } from '../../type.d';
 
 interface BookListContextType {
   filterByGenre: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -17,14 +17,15 @@ const init = state !== null ? JSON.parse(state) : initialState;
 
 export const BookListProvider = ({ children }: ContextProps) => {
   const [state, dispatch] = useReducer(reducer, init);
+
   const filterByGenre = (event: React.ChangeEvent<HTMLSelectElement>) =>
     dispatch({
-      type: 'FILTER_BY_GENRE',
+      type: Types.FILTER_BY_GENRE,
       payload: event.target.value
     });
   const filterByPages = (event: React.ChangeEvent<HTMLInputElement>) =>
     dispatch({
-      type: 'FILTER_BY_PAGES',
+      type: Types.FILTER_BY_PAGES,
       payload: event.target.value
     });
 

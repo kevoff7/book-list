@@ -32,6 +32,11 @@ export interface State {
 
 export type typeStateFilter = Pick<State['filter']>;
 
+export enum Types {
+  FILTER_BY_GENRE = 'FILTER_BY_GENRE',
+  FILTER_BY_PAGES = 'FILTER_BY_PAGES'
+}
+
 export type Action =
-  | { type: 'FILTER_BY_GENRE'; payload: string }
-  | { type: 'FILTER_BY_PAGES'; payload: string };
+  | { type: Types.FILTER_BY_GENRE; payload: string }
+  | { type: Types.FILTER_BY_PAGES; payload: string };
